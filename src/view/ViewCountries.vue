@@ -31,7 +31,6 @@ watch(
   [
     () => regionStore.selectedRegion,
     () => allCountries.value,
-    () => searchStore.searchCountry,
   ],
   ([newRegion, countries]) => {
     if (!countries) return;
