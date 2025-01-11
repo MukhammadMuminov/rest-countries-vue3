@@ -10,7 +10,7 @@ import ViewCountries from './view/ViewCountries.vue'
 const queryClient = new QueryClient()
 const pinia = createPinia()
 const router = createRouter({
-    history: createWebHistory('/'),
+    history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
         {
                 path: "/",
@@ -23,8 +23,9 @@ const router = createRouter({
                 component: ShowCountry,
         },
     ]  
+    
 })
-
+export default router;
 createApp(App)
     .use(VueQueryPlugin, { queryClient })
     .provide('queryClient', queryClient)
